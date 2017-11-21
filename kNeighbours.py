@@ -1,5 +1,6 @@
 import csv
 import random
+import math
 def loadDataset(filename, split, trainingSet=[] , testSet=[]):
 	with open(filename, 'r') as csvfile:
 	    lines = csv.reader(csvfile)
@@ -11,6 +12,18 @@ def loadDataset(filename, split, trainingSet=[] , testSet=[]):
 	            trainingSet.append(dataset[x])
 	        else:
 	            testSet.append(dataset[x])
+
+def euclideanDistance(instance1, instance2, length):
+	distance = 0
+	for x in range(length):
+		distance += pow((instance1[x] - instance2[x]), 2)
+	return math.sqrt(distance)
+
+def manhattanDistance(instance1, instance2, length):
+	distance = 0
+	for x in range(length):
+		distance += abs(instance1[x] - [instance2[x]])
+	return distance
 
 trainingSet=[]
 testSet=[]

@@ -22,11 +22,26 @@ def euclideanDistance(instance1, instance2, length):
 def manhattanDistance(instance1, instance2, length):
 	distance = 0
 	for x in range(length):
-		distance += abs(instance1[x] - [instance2[x]])
+		distance += abs(instance1[x] - instance2[x])
 	return distance
+
+def chybeshevDistance(instance1, instance2, lenght):
+	distanceMax = []
+	distance = 0
+	for x in range(lenght):
+		distance = abs(instance1[x] - instance2[x])
+		distanceMax.append(distance)
+	return max(distanceMax)
 
 trainingSet=[]
 testSet=[]
 loadDataset('iris.data', 0.66, trainingSet, testSet)
 print ('Train: ' + repr(len(trainingSet)))
 print ('Test: ' + repr(len(testSet)))
+
+data1 = [2, 2, 2, 'a']
+data2 = [4, 4, 4, 'b']
+
+print ('Euclidean Distance: ' + repr(euclideanDistance(data1, data2, 3)))
+print ('Manhattan Distance: ' + repr(manhattanDistance(data1, data2, 3)))
+print ('Chybeshev Distance: ' + repr(chybeshevDistance(data1, data2, 3)))

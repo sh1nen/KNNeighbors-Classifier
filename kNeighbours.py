@@ -61,28 +61,43 @@ def getResponse(neighbors):
 def getAccuracy(testSet, predictions):
 	correct = 0
 	for x in range(len(testSet)):
-		if testSet[x][-1] is predictions[x]:
+		if testSet[x][-1] == predictions[x]:
 			correct += 1
 	return (correct/float(len(testSet))) * 100.0
 
+#NOT WORKING AS IT SHOULD/ NORMALIZE EACH ROW TO [0-1]
+def normalize(dataSet, normalizedSet=[]):
+	for x in range(len(dataSet)):
+		for y in range(3):
+			result[x][y] = dataSet[x][y] - min(dataSet[x]) / max(dataSet[x]) - min(dataSet[x])
+		normalizedSet.append(result[x])
+
 def main():
-	# prepare dataset
-	trainingSet = []
-	testSet = []
+	# prepare data
+	trainingSet=[]
+	testSet=[]
 	split = 0.67
 	loadDataset('iris.data', split, trainingSet, testSet)
-	print('Train set: ' + repr(len(trainingSet)))
-	print('Test set: ' + repr(len(testSet)))
+	print ('Train set: ' + repr(len(trainingSet)))
+	print ('Test set: ' + repr(len(testSet)))
 	# generate predictions
-	predictions = []
+	predictions=[]
 	k = 3
 	for x in range(len(testSet)):
-		neighbors = getNeighbors(trainingSet, testSet[x], k)
+		neighbors = getNeighbors(euclideanDistance, trainingSet, testSet[x], k)
 		result = getResponse(neighbors)
 		predictions.append(result)
-		print('> predicted= '+ repr(result) + ', actual=' + repr(testSet[x][-1]))
+		print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
 	accuracy = getAccuracy(testSet, predictions)
 	print('Accuracy: ' + repr(accuracy) + '%')
 
-
-main()
+#main()
+trainingSet=[]
+testSet=[]
+normalizedSet = []
+split = 0.67
+loadDataset('iris.data', split, trainingSet, testSet)
+#normalize(trainingSet, normalizedSet)
+print('Training set: ' + repr(trainingSet))
+print('Specific value: ' + repr(trainingSet[0]))
+#print('Normalized set: ' + repr(normalizedSet))

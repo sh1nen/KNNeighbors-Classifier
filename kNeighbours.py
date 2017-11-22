@@ -69,7 +69,7 @@ def getAccuracy(testSet, predictions):
 def normalize(dataSet):
 	for x in range(len(dataSet)):
 		for y in range(len(dataSet[x]) - 1):
-		 	dataSet[x][y] = (dataSet[x][y] - min(dataSet[x][0:4])) / (max(dataSet[x][0:4]) - min(dataSet[x][0:4]))
+		 	dataSet[x][y] = (dataSet[x][y] - min(dataSet[x][0:len(dataSet[x]) - 1])) / (max(dataSet[x][0:len(dataSet[x]) - 1]) - min(dataSet[x][0:len(dataSet[x]) - 1]))
 
 def main():
 	# prepare data
@@ -90,13 +90,5 @@ def main():
 	accuracy = getAccuracy(testSet, predictions)
 	print('Accuracy: ' + repr(accuracy) + '%')
 
-#main()
-trainingSet=[]
-testSet=[]
-normalizedSet = []
-split = 0.67
-loadDataset('iris.data', split, trainingSet, testSet)
-print('Training set: ' + repr(trainingSet))
-print('Specific value: ' + repr(len(trainingSet[0]) - 1))
-normalize(trainingSet)
-print('Normalized set: ' + repr(trainingSet))
+# MAIN FUNCTION CALL
+main()

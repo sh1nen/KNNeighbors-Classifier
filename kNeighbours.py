@@ -58,6 +58,31 @@ def getResponse(neighbors):
 	sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)
 	return sortedVotes[0][0]
 
-neighbors = [[1,1,1,'a'], [2,2,2,'a'], [3,3,3,'b']]
-response = getResponse(neighbors)
-print(response)
+def getAccuracy(testSet, predictions):
+	correct = 0
+	for x in range(len(testSet)):
+		if testSet[x][-1] is predictions[x]:
+			correct += 1
+	return (correct/float(len(testSet))) * 100.0
+
+def main():
+	# prepare dataset
+	trainingSet = []
+	testSet = []
+	split = 0.67
+	loadDataset('iris.data', split, trainingSet, testSet)
+	print('Train set: ' + repr(len(trainingSet)))
+	print('Test set: ' + repr(len(testSet)))
+	# generate predictions
+	predictions = []
+	k = 3
+	for x in range(len(testSet)):
+		neighbors = getNeighbors(trainingSet, testSet[x], k)
+		result = getResponse(neighbors)
+		predictions.append(result)
+		print('> predicted= '+ repr(result) + ', actual=' + repr(testSet[x][-1]))
+	accuracy = getAccuracy(testSet, predictions)
+	print('Accuracy: ' + repr(accuracy) + '%')
+
+
+main()

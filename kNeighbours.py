@@ -66,10 +66,10 @@ def getAccuracy(testSet, predictions):
 	return (correct/float(len(testSet))) * 100.0
 
 #NOT WORKING AS IT SHOULD/ NORMALIZE EACH ROW TO [0-1]
-def normalize(dataSet, normalizedSet=[]):
+def normalize(dataSet):
 	for x in range(len(dataSet)):
 		for y in range(len(dataSet[x]) - 1):
-			normalizedSet[x][y] = (dataSet[x][y] - min(dataSet[x][0:4])) / (max(dataSet[x][0:4]) - min(dataSet[x][0:4]))
+		 	dataSet[x][y] = (dataSet[x][y] - min(dataSet[x][0:4])) / (max(dataSet[x][0:4]) - min(dataSet[x][0:4]))
 
 def main():
 	# prepare data
@@ -96,7 +96,7 @@ testSet=[]
 normalizedSet = []
 split = 0.67
 loadDataset('iris.data', split, trainingSet, testSet)
-normalize(trainingSet, normalizedSet)
 print('Training set: ' + repr(trainingSet))
 print('Specific value: ' + repr(len(trainingSet[0]) - 1))
-print('Normalized set: ' + repr(normalizedSet))
+normalize(trainingSet)
+print('Normalized set: ' + repr(trainingSet))

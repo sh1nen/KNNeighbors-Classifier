@@ -69,14 +69,14 @@ def getAccuracy(testSet, predictions):
 def normalize(dataSet):
 	for x in range(len(dataSet)):
 		for y in range(len(dataSet[x]) - 1):
-		 	dataSet[x][y] = (dataSet[x][y] - min(dataSet[x][0:len(dataSet[x]) - 1])) / (max(dataSet[x][0:len(dataSet[x]) - 1]) - min(dataSet[x][0:len(dataSet[x]) - 1]))
+		 	dataSet[x][y] = (dataSet[x][y] - min(dataSet[0:len(dataSet)][y])) / (max(dataSet[0:len(dataSet)][y]) - min(dataSet[0:len(dataSet)][y]))
 
 def main(distanceMethod, kNeighbors):
 	# prepare data
 	trainingSet=[]
 	testSet=[]
 	split = 0.67
-	loadDataset('iris.data', split, trainingSet, testSet)
+	loadDataset('wine.data', split, trainingSet, testSet)
 	print ('Train set: ' + repr(len(trainingSet)))
 	print ('Test set: ' + repr(len(testSet)))
 	# generate predictions

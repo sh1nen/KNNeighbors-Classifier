@@ -1,6 +1,7 @@
 import csv
 import random
 import math
+import operator
 def loadDataset(filename, split, trainingSet=[] , testSet=[]):
 	with open(filename, 'r') as csvfile:
 	    lines = csv.reader(csvfile)
@@ -33,15 +34,20 @@ def chybeshevDistance(instance1, instance2, lenght):
 		distanceMax.append(distance)
 	return max(distanceMax)
 
-trainingSet=[]
-testSet=[]
-loadDataset('iris.data', 0.66, trainingSet, testSet)
-print ('Train: ' + repr(len(trainingSet)))
-print ('Test: ' + repr(len(testSet)))
+def getNeighbors(distanceMethod, trainingSet, testInstance, k):
+	distances = []
+	lenght = len(testInstance) - 1
+	for x in range(len(trainingSet)):
+		dist = distanceMethod(testInstance, trainingSet[x], lenght)
+		distances.append((trainingSet[x], dist))
+	distances.sort(key=operator.itemgetter(1))
+	neighbors = []
+	for x in range(k):
+		neighbors.append(distances[x][0])
+	return neighbors
 
-data1 = [2, 2, 2, 'a']
-data2 = [4, 4, 4, 'b']
-
-print ('Euclidean Distance: ' + repr(euclideanDistance(data1, data2, 3)))
-print ('Manhattan Distance: ' + repr(manhattanDistance(data1, data2, 3)))
-print ('Chybeshev Distance: ' + repr(chybeshevDistance(data1, data2, 3)))
+trainSet = [[2,2,2,'a'], [4,4,4,'b']]
+testInstance = [5,5,5]
+k = 1
+neighbors = getNeighbors(manhattanDistance, trainSet, testInstance, 1)
+print(neighbors)

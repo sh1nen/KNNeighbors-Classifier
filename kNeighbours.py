@@ -8,7 +8,7 @@ def loadDataset(filename, split, trainingSet=[] , testSet=[]):
 	    lines = csv.reader(csvfile)
 	    dataset = list(lines)
 	    for x in range(len(dataset)-1):
-	        for y in range(4):
+	        for y in range(len(dataset[x]) - 1):
 	            dataset[x][y] = float(dataset[x][y])
 	        if random.random() < split:
 	            trainingSet.append(dataset[x])
@@ -71,7 +71,7 @@ def normalize(dataSet):
 		for y in range(len(dataSet[x]) - 1):
 		 	dataSet[x][y] = (dataSet[x][y] - min(dataSet[x][0:len(dataSet[x]) - 1])) / (max(dataSet[x][0:len(dataSet[x]) - 1]) - min(dataSet[x][0:len(dataSet[x]) - 1]))
 
-def main():
+def main(distanceMethod, kNeighbors):
 	# prepare data
 	trainingSet=[]
 	testSet=[]
@@ -81,9 +81,8 @@ def main():
 	print ('Test set: ' + repr(len(testSet)))
 	# generate predictions
 	predictions=[]
-	k = 3
 	for x in range(len(testSet)):
-		neighbors = getNeighbors(euclideanDistance, trainingSet, testSet[x], k)
+		neighbors = getNeighbors(distanceMethod, trainingSet, testSet[x], kNeighbors)
 		result = getResponse(neighbors)
 		predictions.append(result)
 		print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
@@ -91,4 +90,4 @@ def main():
 	print('Accuracy: ' + repr(accuracy) + '%')
 
 # MAIN FUNCTION CALL
-main()
+main(euclideanDistance, 3)

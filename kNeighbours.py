@@ -2,18 +2,28 @@ import csv
 import random
 import math
 import operator
+import numpy as np
 
-def loadDataset(filename, split, trainingSet=[] , testSet=[]):
+def loadDataset(filename,fullSet=[]):
 	with open(filename, 'r') as csvfile:
-	    lines = csv.reader(csvfile)
-	    dataset = list(lines)
-	    for x in range(len(dataset)-1):
-	        for y in range(len(dataset[x]) - 1):
-	            dataset[x][y] = float(dataset[x][y])
-	        if random.random() < split:
-	            trainingSet.append(dataset[x])
-	        else:
-	            testSet.append(dataset[x])
+		lines = csv.reader(csvfile)
+		dataset = list(lines)
+		for x in range(len(dataset)-1):
+			for y in range(len(dataset[x])-1):
+				dataset[x][y] = float(dataset[x][y])
+			fullSet.append(dataset[x])
+
+def kFold(fullSet, split, species, trainingSet=[], testSet=[]):
+	columns = np.shape(fullSet)[1]
+	for x in range(len(species)-1):
+		kFoldSpecies([row for row in fullSet if (list(species)[x]) in row[(int)(repr(columns - 1))]], split, trainingSet, testSet)
+
+def kFoldSpecies(species, split, trainingSet=[], testSet=[]):
+	for x in range(len(species)):
+		if random.random() < split:
+			trainingSet.append(species[x])
+		else:
+			testSet.append(species[x])
 
 def euclideanDistance(instance1, instance2, length):
 	distance = 0
@@ -71,17 +81,24 @@ def normalize(dataSet):
 		for y in range(len(dataSet[x]) - 1):
 		 	dataSet[x][y] = (dataSet[x][y] - min(list([i[y] for i in dataSet]))) / (max(list([i[y] for i in dataSet])) - min(list([i[y] for i in dataSet])))
 
-def main(distanceMethod, kNeighbors):
+def main(distanceMethod, kNeighbors, isNormalized):
 	# prepare data
+	fullSet = []
 	trainingSet=[]
 	testSet=[]
-	split = 0.80
-	loadDataset('wine.data', split, trainingSet, testSet)
+	split = 0.67
+	loadDataset('wine.data', fullSet)
+	columns = np.shape(fullSet)[1]
+	species = set([i[columns-1] for i in fullSet])
+	kFold(fullSet, 0.67, species, trainingSet, testSet)
 	print ('Train set: ' + repr(len(trainingSet)))
 	print ('Test set: ' + repr(len(testSet)))
+
 	# generate predictions
-	normalize(trainingSet);
-	normalize(testSet)
+	if isNormalized == 1:
+		normalize(trainingSet)
+		normalize(testSet)
+
 	predictions=[]
 	for x in range(len(testSet)):
 		neighbors = getNeighbors(distanceMethod, trainingSet, testSet[x], kNeighbors)
@@ -92,4 +109,8 @@ def main(distanceMethod, kNeighbors):
 	print('Accuracy: ' + repr(accuracy) + '%')
 
 # MAIN FUNCTION CALL
-main(euclideanDistance, 3)
+# $1 - metric distanceMethod
+# $2 - kNeighbors
+# $3 - normalize dataSet ? (true or false)
+
+main(euclideanDistance, 3, 1)

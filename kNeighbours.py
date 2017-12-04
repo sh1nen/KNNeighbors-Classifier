@@ -113,4 +113,4 @@ def main(distanceMethod, kNeighbors, isNormalized):
 # $2 - kNeighbors
 # $3 - normalize dataSet ? (true or false)
 
-main(euclideanDistance, 3, 1)
+main(euclideanDistance, 3, 0)

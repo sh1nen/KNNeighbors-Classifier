@@ -98,19 +98,20 @@ def main(distanceMethod, kNeighbors, isNormalized):
 	if isNormalized == 1:
 		normalize(trainingSet)
 		normalize(testSet)
-
-	predictions=[]
-	for x in range(len(testSet)):
-		neighbors = getNeighbors(distanceMethod, trainingSet, testSet[x], kNeighbors)
-		result = getResponse(neighbors)
-		predictions.append(result)
-		print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
-	accuracy = getAccuracy(testSet, predictions)
-	print('Accuracy: ' + repr(accuracy) + '%')
+		
+	for kNeighbor in kNeighbors:
+		predictions=[]
+		for x in range(len(testSet)):
+			neighbors = getNeighbors(distanceMethod, trainingSet, testSet[x], kNeighbor)
+			result = getResponse(neighbors)
+			predictions.append(result)
+			print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
+			accuracy = getAccuracy(testSet, predictions)
+			print('Accuracy: ' + repr(accuracy) + '%')
 
 # MAIN FUNCTION CALL
 # $1 - metric distanceMethod
 # $2 - kNeighbors
 # $3 - normalize dataSet ? (true or false)
-
-main(euclideanDistance, 3, 0)
+kNeighbors = [1,3,5,10];
+main(euclideanDistance, kNeighbors, 0)

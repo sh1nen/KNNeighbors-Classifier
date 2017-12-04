@@ -98,7 +98,7 @@ def main(distanceMethod, kNeighbors, isNormalized):
 	if isNormalized == 1:
 		normalize(trainingSet)
 		normalize(testSet)
-		
+
 	for kNeighbor in kNeighbors:
 		predictions=[]
 		for x in range(len(testSet)):
@@ -106,8 +106,8 @@ def main(distanceMethod, kNeighbors, isNormalized):
 			result = getResponse(neighbors)
 			predictions.append(result)
 			print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
-			accuracy = getAccuracy(testSet, predictions)
-			print('Accuracy: ' + repr(accuracy) + '%')
+		accuracy = getAccuracy(testSet, predictions)
+		print('Accuracy: ' + repr(accuracy) + '%')
 
 # MAIN FUNCTION CALL
 # $1 - metric distanceMethod

@@ -15,7 +15,7 @@ def loadDataset(filename,fullSet=[]):
 
 def kFold(fullSet, split, species, trainingSet=[], testSet=[]):
 	columns = np.shape(fullSet)[1]
-	for x in range(len(species)-1):
+	for x in range(len(species)):
 		kFoldSpecies([row for row in fullSet if (list(species)[x]) in row[(int)(repr(columns - 1))]], split, trainingSet, testSet)
 
 def kFoldSpecies(species, split, trainingSet=[], testSet=[]):
@@ -87,10 +87,11 @@ def main(distanceMethod, kNeighbors, isNormalized):
 	trainingSet=[]
 	testSet=[]
 	split = 0.67
-	loadDataset('wine.data', fullSet)
+	loadDataset('iris.data', fullSet)
+	print ('Full set: ' + repr(len(fullSet)))
 	columns = np.shape(fullSet)[1]
 	species = set([i[columns-1] for i in fullSet])
-	kFold(fullSet, 0.67, species, trainingSet, testSet)
+	kFold(fullSet, split, species, trainingSet, testSet)
 	print ('Train set: ' + repr(len(trainingSet)))
 	print ('Test set: ' + repr(len(testSet)))
 

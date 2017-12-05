@@ -1,4 +1,5 @@
 import csv
+import sys
 import random
 import math
 import operator
@@ -76,18 +77,18 @@ def getAccuracy(testSet, predictions):
 	return (correct/float(len(testSet))) * 100.0
 
 #NOT WORKING AS IT SHOULD/ NORMALIZE EACH ROW TO [0-1]
-def normalize(dataSet):
-	for x in range(len(dataSet)):
+def normalize(dataSet=[]):
+	for x in range(len(dataSet)-1):
 		for y in range(len(dataSet[x]) - 1):
 		 	dataSet[x][y] = (dataSet[x][y] - min(list([i[y] for i in dataSet]))) / (max(list([i[y] for i in dataSet])) - min(list([i[y] for i in dataSet])))
 
-def main(distanceMethod, kNeighbors, isNormalized):
+def main(fileName, distanceMethod, kNeighbors, isNormalized):
 	# prepare data
 	fullSet = []
 	trainingSet=[]
 	testSet=[]
-	split = 0.80
-	loadDataset('wine.data', fullSet)
+	split = 0.75
+	loadDataset(fileName, fullSet)
 	print ('Full set: ' + repr(len(fullSet)))
 	columns = np.shape(fullSet)[1]
 	species = set([i[columns-1] for i in fullSet])
@@ -99,6 +100,11 @@ def main(distanceMethod, kNeighbors, isNormalized):
 	if isNormalized == 1:
 		normalize(trainingSet)
 		normalize(testSet)
+
+	for x in range(len(trainingSet)-1):
+		for y in range(len(trainingSet[x])-1):
+			print(trainingSet[x][y])
+		print('\n')
 
 	distanceMethods = (euclideanDistance, manhattanDistance, chybeshevDistance)
 	for distanceMethod in distanceMethods:
@@ -118,4 +124,4 @@ def main(distanceMethod, kNeighbors, isNormalized):
 # $2 - kNeighbors
 # $3 - normalize dataSet ? (true or false)
 kNeighbors = [1,3,5,10];
-main(euclideanDistance, kNeighbors, 0)
+main(sys.argv[1], euclideanDistance, kNeighbors, int(sys.argv[2]))

@@ -86,8 +86,8 @@ def main(distanceMethod, kNeighbors, isNormalized):
 	fullSet = []
 	trainingSet=[]
 	testSet=[]
-	split = 0.67
-	loadDataset('iris.data', fullSet)
+	split = 0.80
+	loadDataset('wine.data', fullSet)
 	print ('Full set: ' + repr(len(fullSet)))
 	columns = np.shape(fullSet)[1]
 	species = set([i[columns-1] for i in fullSet])

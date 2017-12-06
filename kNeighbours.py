@@ -138,8 +138,8 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 	for distanceMethod in distanceMethods:
 		print('Method name: ' + repr(distanceMethod))
 		for kNeighbor in kNeighbors:
+			totalAccuracy = 0
 			for case in range(1, 4):
-				totalAccuracy = 0
 				xCrossValidation(firstFold, secondFold, thirdFold, case, trainingSet, testSet)
 				# generate predictions
 				if isNormalized == 1:

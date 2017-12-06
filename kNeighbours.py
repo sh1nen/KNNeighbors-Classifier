@@ -29,10 +29,6 @@ def kFoldSpecies(species, firstFold=[], secondFold=[], thirdFold=[]):
 def chunkify(species, nFolds):
 	return [species[i::nFolds] for i in range(nFolds)]
 
-def xCrossValidation(firstFold, secondFold, thirdFold, trainingSet=[], testSet=[]):
-	trainingSet.clear()
-	testSet.clear()
-
 def xCrossValidation(firstFold, secondFold, thirdFold, case, trainingSet=[], testSet=[]):
 	trainingSet.clear()
 	testSet.clear()
@@ -109,8 +105,8 @@ def getAccuracy(testSet, predictions):
 	return (correct/float(len(testSet))) * 100.0
 
 def normalize(dataSet=[]):
-	for x in range(len(dataSet)-1):
-		for y in range(len(dataSet[x]) - 1):
+	for x in range(len(dataSet)):
+		for y in range(len(dataSet[x])-1):
 		 	dataSet[x][y] = (dataSet[x][y] - min(list([i[y] for i in dataSet]))) / (max(list([i[y] for i in dataSet])) - min(list([i[y] for i in dataSet])))
 
 def main(fileName, distanceMethod, kNeighbors, isNormalized):
@@ -125,26 +121,28 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 	thirdFold=[]
 	#create 3 folds with randomly picked up sets from specific species
 	kFold(fullSet, species, firstFold, secondFold, thirdFold)
-	trainingSet=[]
-	testSet=[]
 
 	#create trainingSet and testSet based on cross validation rule 1,2,3
+	#2 + 3 = trainingSet, 1 - testSet
 	#1 + 3 = trainingSet, 2 - testSet
 	#1 + 2 = trainingSet, 3 - testSet
-	#3 + 2 = trainingSet, 1 - testSet
-
 
 	distanceMethods = (euclideanDistance, manhattanDistance, chybeshevDistance)
 	for distanceMethod in distanceMethods:
 		print('Method name: ' + repr(distanceMethod))
 		for kNeighbor in kNeighbors:
+			print('Neighbours: ' + repr(kNeighbor))
 			totalAccuracy = 0
 			for case in range(1, 4):
+				#create trainingSet and testSet
+				trainingSet=[]
+				testSet=[]
 				xCrossValidation(firstFold, secondFold, thirdFold, case, trainingSet, testSet)
-				# generate predictions
+				#normalize sets
 				if isNormalized == 1:
 					normalize(trainingSet)
 					normalize(testSet)
+
 				predictions=[]
 				for x in range(len(testSet)):
 					neighbors = getNeighbors(distanceMethod, trainingSet, testSet[x], kNeighbor)
@@ -155,6 +153,7 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 				totalAccuracy += accuracy
 				print('Accuracy: ' + repr(accuracy) + '%')
 			print('Total Accuracy:' + repr(totalAccuracy/3) + '%')
+
 # MAIN FUNCTION CALL
 # $1 - filename
 # $2 - metric distanceMethod

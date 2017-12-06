@@ -16,15 +16,32 @@ def loadDataset(filename,fullSet=[]):
 
 def kFold(fullSet, split, species, trainingSet=[], testSet=[]):
 	columns = np.shape(fullSet)[1]
+	print('columns: ' + repr(species))
 	for x in range(len(species)):
 		kFoldSpecies([row for row in fullSet if (list(species)[x]) in row[(int)(repr(columns - 1))]], split, trainingSet, testSet)
 
 def kFoldSpecies(species, split, trainingSet=[], testSet=[]):
-	for x in range(len(species)):
+	for x in range(len(species) - 1):
 		if random.random() < split:
 			trainingSet.append(species[x])
 		else:
 			testSet.append(species[x])
+
+def countSpeciesInSet(dataSet, species):
+	columns = np.shape(dataSet)[1]
+	speciesOne = 0
+	speciesTwo = 0
+	speciesThree = 0
+	for x in range(len(dataSet)):
+		if dataSet[x][columns-1] == list(species)[0]:
+			speciesOne += 1
+		elif dataSet[x][columns-1] == list(species)[1]:
+			speciesTwo += 1
+		elif dataSet[x][columns-1] == list(species)[2]:
+			speciesThree += 1
+	print('Spiece one ' + repr(speciesOne))
+	print('Spiece two ' + repr(speciesTwo))
+	print('Spiece three ' + repr(speciesThree))
 
 def euclideanDistance(instance1, instance2, length):
 	distance = 0
@@ -87,7 +104,7 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 	fullSet = []
 	trainingSet=[]
 	testSet=[]
-	split = 0.75
+	split = 0.33
 	loadDataset(fileName, fullSet)
 	print ('Full set: ' + repr(len(fullSet)))
 	columns = np.shape(fullSet)[1]
@@ -95,16 +112,13 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 	kFold(fullSet, split, species, trainingSet, testSet)
 	print ('Train set: ' + repr(len(trainingSet)))
 	print ('Test set: ' + repr(len(testSet)))
+	
+	countSpeciesInSet(testSet, species)
 
 	# generate predictions
 	if isNormalized == 1:
 		normalize(trainingSet)
 		normalize(testSet)
-
-	for x in range(len(trainingSet)-1):
-		for y in range(len(trainingSet[x])-1):
-			print(trainingSet[x][y])
-		print('\n')
 
 	distanceMethods = (euclideanDistance, manhattanDistance, chybeshevDistance)
 	for distanceMethod in distanceMethods:
@@ -115,7 +129,7 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 				neighbors = getNeighbors(distanceMethod, trainingSet, testSet[x], kNeighbor)
 				result = getResponse(neighbors)
 				predictions.append(result)
-				print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
+				#print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
 			accuracy = getAccuracy(testSet, predictions)
 			print('Accuracy: ' + repr(accuracy) + '%')
 

@@ -14,35 +14,30 @@ def loadDataset(filename,fullSet=[]):
 				dataset[x][y] = float(dataset[x][y])
 			fullSet.append(dataset[x])
 
-def kFold(fullSet, split, species, trainingSet=[], testSet=[]):
+def kFold(fullSet, species, firstFold=[], secondFold=[], thirdFold=[]):
 	columns = np.shape(fullSet)[1]
-	print('columns: ' + repr(species))
 	for x in range(len(species)):
-		kFoldSpecies([row for row in fullSet if (list(species)[x]) in row[(int)(repr(columns - 1))]], split, trainingSet, testSet)
+		kFoldSpecies([row for row in fullSet if (list(species)[x]) in row[(int)(repr(columns - 1))]], firstFold, secondFold, thirdFold)
 
-def kFoldSpecies(species, split, trainingSet=[], testSet=[]):
-	for x in range(len(species) - 1):
-		if random.random() < split:
-			trainingSet.append(species[x])
-		else:
-			testSet.append(species[x])
+def kFoldSpecies(species, firstFold=[], secondFold=[], thirdFold=[]):
+	random.shuffle(species)
+	print(len(species))
+	listOfLists = list(chunkify(species, 3))
+	firstFold.extend(listOfLists[0])
+	secondFold.extend(listOfLists[1])
+	thirdFold.extend(listOfLists[2])
 
-def countSpeciesInSet(dataSet, species):
-	columns = np.shape(dataSet)[1]
-	speciesOne = 0
-	speciesTwo = 0
-	speciesThree = 0
-	for x in range(len(dataSet)):
-		if dataSet[x][columns-1] == list(species)[0]:
-			speciesOne += 1
-		elif dataSet[x][columns-1] == list(species)[1]:
-			speciesTwo += 1
-		elif dataSet[x][columns-1] == list(species)[2]:
-			speciesThree += 1
-	print('Spiece one ' + repr(speciesOne))
-	print('Spiece two ' + repr(speciesTwo))
-	print('Spiece three ' + repr(speciesThree))
+def chunkify(species, nFolds):
+	return [species[i::nFolds] for i in range(nFolds)]
 
+def xCrossValidation(firstFold, secondFold, thirdFold, trainingSet=[], testSet=[]):
+	for x in range(len(firstFold)):
+		testSet.append(firstFold[x])
+	for x in range(len(secondFold)):
+		trainingSet.append(secondFold[x])
+	for x in range(len(thirdFold)):
+		trainingSet.append(thirdFold[x])
+		
 def euclideanDistance(instance1, instance2, length):
 	distance = 0
 	for x in range(length):
@@ -102,19 +97,25 @@ def normalize(dataSet=[]):
 def main(fileName, distanceMethod, kNeighbors, isNormalized):
 	# prepare data
 	fullSet = []
-	trainingSet=[]
-	testSet=[]
-	split = 0.33
 	loadDataset(fileName, fullSet)
-	print ('Full set: ' + repr(len(fullSet)))
 	columns = np.shape(fullSet)[1]
 	species = set([i[columns-1] for i in fullSet])
-	kFold(fullSet, split, species, trainingSet, testSet)
-	print ('Train set: ' + repr(len(trainingSet)))
-	print ('Test set: ' + repr(len(testSet)))
-	
-	countSpeciesInSet(testSet, species)
 
+	firstFold=[]
+	secondFold=[]
+	thirdFold=[]
+	#create 3 folds with randomly picked up sets from specific species
+	kFold(fullSet, species, firstFold, secondFold, thirdFold)
+	trainingSet=[]
+	testSet=[]
+	#create trainingSet and testSet based on cross validation rule 1,2,3
+	#1 + 3 = trainingSet, 2 - testSet
+	#1 + 2 = trainingSet, 3 - testSet
+	#3 + 2 = trainingSet, 1 - testSet
+	xCrossValidation(firstFold, secondFold, thirdFold, trainingSet, testSet)
+	print('First set ' + repr(len(firstFold)))
+	print('Training set ' + repr(len(trainingSet)))
+	print('Test set ' + repr(len(testSet)))
 	# generate predictions
 	if isNormalized == 1:
 		normalize(trainingSet)

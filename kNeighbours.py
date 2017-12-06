@@ -21,7 +21,6 @@ def kFold(fullSet, species, firstFold=[], secondFold=[], thirdFold=[]):
 
 def kFoldSpecies(species, firstFold=[], secondFold=[], thirdFold=[]):
 	random.shuffle(species)
-	print(len(species))
 	listOfLists = list(chunkify(species, 3))
 	firstFold.extend(listOfLists[0])
 	secondFold.extend(listOfLists[1])
@@ -31,13 +30,34 @@ def chunkify(species, nFolds):
 	return [species[i::nFolds] for i in range(nFolds)]
 
 def xCrossValidation(firstFold, secondFold, thirdFold, trainingSet=[], testSet=[]):
-	for x in range(len(firstFold)):
-		testSet.append(firstFold[x])
-	for x in range(len(secondFold)):
-		trainingSet.append(secondFold[x])
-	for x in range(len(thirdFold)):
-		trainingSet.append(thirdFold[x])
-		
+	trainingSet.clear()
+	testSet.clear()
+
+def xCrossValidation(firstFold, secondFold, thirdFold, case, trainingSet=[], testSet=[]):
+	trainingSet.clear()
+	testSet.clear()
+	if case == 1:
+		for x in range(len(firstFold)):
+			testSet.append(firstFold[x])
+		for x in range(len(secondFold)):
+			trainingSet.append(secondFold[x])
+		for x in range(len(thirdFold)):
+			trainingSet.append(thirdFold[x]),
+	elif case == 2:
+		for x in range(len(secondFold)):
+			testSet.append(secondFold[x])
+		for x in range(len(firstFold)):
+			trainingSet.append(firstFold[x])
+		for x in range(len(thirdFold)):
+			trainingSet.append(thirdFold[x]),
+	elif case == 3:
+		for x in range(len(thirdFold)):
+			testSet.append(thirdFold[x])
+		for x in range(len(firstFold)):
+			trainingSet.append(firstFold[x])
+		for x in range(len(secondFold)):
+			trainingSet.append(secondFold[x])
+
 def euclideanDistance(instance1, instance2, length):
 	distance = 0
 	for x in range(length):
@@ -88,7 +108,6 @@ def getAccuracy(testSet, predictions):
 			correct += 1
 	return (correct/float(len(testSet))) * 100.0
 
-#NOT WORKING AS IT SHOULD/ NORMALIZE EACH ROW TO [0-1]
 def normalize(dataSet=[]):
 	for x in range(len(dataSet)-1):
 		for y in range(len(dataSet[x]) - 1):
@@ -108,35 +127,38 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 	kFold(fullSet, species, firstFold, secondFold, thirdFold)
 	trainingSet=[]
 	testSet=[]
+
 	#create trainingSet and testSet based on cross validation rule 1,2,3
 	#1 + 3 = trainingSet, 2 - testSet
 	#1 + 2 = trainingSet, 3 - testSet
 	#3 + 2 = trainingSet, 1 - testSet
-	xCrossValidation(firstFold, secondFold, thirdFold, trainingSet, testSet)
-	print('First set ' + repr(len(firstFold)))
-	print('Training set ' + repr(len(trainingSet)))
-	print('Test set ' + repr(len(testSet)))
-	# generate predictions
-	if isNormalized == 1:
-		normalize(trainingSet)
-		normalize(testSet)
+
 
 	distanceMethods = (euclideanDistance, manhattanDistance, chybeshevDistance)
 	for distanceMethod in distanceMethods:
 		print('Method name: ' + repr(distanceMethod))
 		for kNeighbor in kNeighbors:
-			predictions=[]
-			for x in range(len(testSet)):
-				neighbors = getNeighbors(distanceMethod, trainingSet, testSet[x], kNeighbor)
-				result = getResponse(neighbors)
-				predictions.append(result)
-				#print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
-			accuracy = getAccuracy(testSet, predictions)
-			print('Accuracy: ' + repr(accuracy) + '%')
-
+			for case in range(1, 4):
+				totalAccuracy = 0
+				xCrossValidation(firstFold, secondFold, thirdFold, case, trainingSet, testSet)
+				# generate predictions
+				if isNormalized == 1:
+					normalize(trainingSet)
+					normalize(testSet)
+				predictions=[]
+				for x in range(len(testSet)):
+					neighbors = getNeighbors(distanceMethod, trainingSet, testSet[x], kNeighbor)
+					result = getResponse(neighbors)
+					predictions.append(result)
+					#print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
+				accuracy = getAccuracy(testSet, predictions)
+				totalAccuracy += accuracy
+				print('Accuracy: ' + repr(accuracy) + '%')
+			print('Total Accuracy:' + repr(totalAccuracy/3) + '%')
 # MAIN FUNCTION CALL
-# $1 - metric distanceMethod
-# $2 - kNeighbors
-# $3 - normalize dataSet ? (true or false)
+# $1 - filename
+# $2 - metric distanceMethod
+# $3 - n-neighbours
+# $4 - normalize dataSet ? (true or false)
 kNeighbors = [1,3,5,10];
 main(sys.argv[1], euclideanDistance, kNeighbors, int(sys.argv[2]))

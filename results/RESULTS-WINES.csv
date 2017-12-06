@@ -1,24 +1,4 @@
 
-	countSpeciesInSet(testSet, species)
-
-	# generate predictions
-	if isNormalized == 1:
-		normalize(trainingSet)
-		normalize(testSet)
-
-	distanceMethods = (euclideanDistance, manhattanDistance, chybeshevDistance)
-	for distanceMethod in distanceMethods:
-		print('Method name: ' + repr(distanceMethod))
-		for kNeighbor in kNeighbors:
-			predictions=[]
-			for x in range(len(testSet)):
-				neighbors = getNeighbors(distanceMethod, trainingSet, testSet[x], kNeighbor)
-				result = getResponse(neighbors)
-				predictions.append(result)
-				#print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
-			accuracy = getAccuracy(testSet, predictions)
-			print('Accuracy: ' + repr(accuracy) + '%')
-
 			def countSpeciesInSet(dataSet, species):
 				columns = np.shape(dataSet)[1]
 				speciesOne = 0

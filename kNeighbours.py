@@ -105,7 +105,7 @@ def getAccuracy(testSet, predictions):
 	return (correct/float(len(testSet))) * 100.0
 
 def normalize(dataSet=[]):
-	for x in range(len(dataSet)):
+	for x in range(len(dataSet)-1):
 		for y in range(len(dataSet[x])-1):
 		 	dataSet[x][y] = (dataSet[x][y] - min(list([i[y] for i in dataSet]))) / (max(list([i[y] for i in dataSet])) - min(list([i[y] for i in dataSet])))
 
@@ -113,6 +113,9 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 	# prepare data
 	fullSet = []
 	loadDataset(fileName, fullSet)
+	if isNormalized == 1:
+		normalize(fullSet)
+
 	columns = np.shape(fullSet)[1]
 	species = set([i[columns-1] for i in fullSet])
 
@@ -138,10 +141,6 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 				trainingSet=[]
 				testSet=[]
 				xCrossValidation(firstFold, secondFold, thirdFold, case, trainingSet, testSet)
-				#normalize sets
-				if isNormalized == 1:
-					normalize(trainingSet)
-					normalize(testSet)
 
 				predictions=[]
 				for x in range(len(testSet)):

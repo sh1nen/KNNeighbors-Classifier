@@ -1,147 +1,90 @@
-Species: {'Iris-setosa', 'Iris-virginica', 'Iris-versicolor'}
-Method name: <function euclideanDistance at 0x000001CD6B3D9D90>
+Species: {'Iris-setosa', 'Iris-versicolor', 'Iris-virginica'}
+Method name: <function euclideanDistance at 0x000001A4FF329D90>
 Neighbours: 1
 [[17  0  0]
- [ 0 14  3]
- [ 0  0 17]]
-Accuracy: 94.11764705882352%
-[[17  0  0]
  [ 0 16  1]
  [ 0  1 16]]
 Accuracy: 96.07843137254902%
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  0 17]]
+Accuracy: 98.0392156862745%
 [[16  0  0]
- [ 0 16  0]
- [ 0  1 15]]
-Accuracy: 97.91666666666666%
-Total Accuracy:96.0375816993464%
+ [ 0 14  2]
+ [ 0  2 14]]
+Accuracy: 91.66666666666666%
+Total Accuracy:95.26143790849672%
 Neighbours: 3
 [[17  0  0]
- [ 0 15  2]
- [ 0  0 17]]
-Accuracy: 96.07843137254902%
-[[17  0  0]
- [ 0 16  1]
+ [ 0 17  0]
  [ 0  1 16]]
-Accuracy: 96.07843137254902%
+Accuracy: 98.0392156862745%
+[[17  0  0]
+ [ 0 17  0]
+ [ 0  0 17]]
+Accuracy: 100.0%
 [[16  0  0]
- [ 0 16  0]
- [ 0  1 15]]
-Accuracy: 97.91666666666666%
-Total Accuracy:96.69117647058823%
+ [ 0 14  2]
+ [ 0  2 14]]
+Accuracy: 91.66666666666666%
+Total Accuracy:96.56862745098039%
 Neighbours: 5
 [[17  0  0]
- [ 0 14  3]
+ [ 0 16  1]
  [ 0  0 17]]
-Accuracy: 94.11764705882352%
+Accuracy: 98.0392156862745%
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  1 16]]
+Accuracy: 96.07843137254902%
+[[16  0  0]
+ [ 0 15  1]
+ [ 0  2 14]]
+Accuracy: 93.75%
+Total Accuracy:95.95588235294117%
+Neighbours: 10
+[[17  0  0]
+ [ 0 15  2]
+ [ 0  0 17]]
+Accuracy: 96.07843137254902%
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  0 17]]
+Accuracy: 98.0392156862745%
+[[16  0  0]
+ [ 0 15  1]
+ [ 0  2 14]]
+Accuracy: 93.75%
+Total Accuracy:95.95588235294117%
+Method name: <function manhattanDistance at 0x000001A4FF329E18>
+Neighbours: 1
 [[17  0  0]
  [ 0 15  2]
  [ 0  1 16]]
 Accuracy: 94.11764705882352%
-[[16  0  0]
- [ 0 16  0]
- [ 0  1 15]]
-Accuracy: 97.91666666666666%
-Total Accuracy:95.38398692810456%
-Neighbours: 10
 [[17  0  0]
  [ 0 16  1]
- [ 0  1 16]]
-Accuracy: 96.07843137254902%
-[[17  0  0]
- [ 0 16  1]
- [ 0  1 16]]
-Accuracy: 96.07843137254902%
-[[16  0  0]
- [ 0 16  0]
- [ 0  0 16]]
-Accuracy: 100.0%
-Total Accuracy:97.38562091503267%
-Method name: <function manhattanDistance at 0x000001CD6B3D9E18>
-Neighbours: 1
-[[17  0  0]
- [ 0 14  3]
  [ 0  0 17]]
-Accuracy: 94.11764705882352%
-[[17  0  0]
- [ 0 16  1]
- [ 0  1 16]]
-Accuracy: 96.07843137254902%
+Accuracy: 98.0392156862745%
 [[16  0  0]
- [ 0 16  0]
- [ 0  1 15]]
-Accuracy: 97.91666666666666%
-Total Accuracy:96.0375816993464%
+ [ 0 14  2]
+ [ 0  2 14]]
+Accuracy: 91.66666666666666%
+Total Accuracy:94.60784313725487%
 Neighbours: 3
 [[17  0  0]
  [ 0 15  2]
- [ 0  0 17]]
-Accuracy: 96.07843137254902%
-[[17  0  0]
- [ 0 15  2]
  [ 0  1 16]]
 Accuracy: 94.11764705882352%
-[[16  0  0]
- [ 0 16  0]
- [ 0  1 15]]
-Accuracy: 97.91666666666666%
-Total Accuracy:96.0375816993464%
-Neighbours: 5
 [[17  0  0]
- [ 0 15  2]
+ [ 0 17  0]
  [ 0  0 17]]
-Accuracy: 96.07843137254902%
-[[17  0  0]
- [ 0 16  1]
- [ 0  1 16]]
-Accuracy: 96.07843137254902%
-[[16  0  0]
- [ 0 16  0]
- [ 0  1 15]]
-Accuracy: 97.91666666666666%
-Total Accuracy:96.69117647058823%
-Neighbours: 10
-[[17  0  0]
- [ 0 16  1]
- [ 0  1 16]]
-Accuracy: 96.07843137254902%
-[[17  0  0]
- [ 0 15  2]
- [ 0  1 16]]
-Accuracy: 94.11764705882352%
-[[16  0  0]
- [ 0 16  0]
- [ 0  1 15]]
-Accuracy: 97.91666666666666%
-Total Accuracy:96.0375816993464%
-Method name: <function chybeshevDistance at 0x000001CD6B3D9EA0>
-Neighbours: 1
-[[17  0  0]
- [ 0 13  4]
- [ 0  1 16]]
-Accuracy: 90.19607843137256%
-[[17  0  0]
- [ 0 16  1]
- [ 0  1 16]]
-Accuracy: 96.07843137254902%
-[[16  0  0]
- [ 0 16  0]
- [ 0  1 15]]
-Accuracy: 97.91666666666666%
-Total Accuracy:94.73039215686275%
-Neighbours: 3
-[[17  0  0]
- [ 0 14  3]
- [ 0  0 17]]
-Accuracy: 94.11764705882352%
-[[17  0  0]
- [ 0 16  1]
- [ 0  1 16]]
-Accuracy: 96.07843137254902%
-[[16  0  0]
- [ 0 16  0]
- [ 0  0 16]]
 Accuracy: 100.0%
-Total Accuracy:96.73202614379085%
+[[16  0  0]
+ [ 0 14  2]
+ [ 0  2 14]]
+Accuracy: 91.66666666666666%
+Total Accuracy:95.26143790849672%
 Neighbours: 5
 [[17  0  0]
  [ 0 15  2]
@@ -149,24 +92,81 @@ Neighbours: 5
 Accuracy: 96.07843137254902%
 [[17  0  0]
  [ 0 15  2]
- [ 0  1 16]]
-Accuracy: 94.11764705882352%
+ [ 0  0 17]]
+Accuracy: 96.07843137254902%
 [[16  0  0]
- [ 0 16  0]
- [ 0  0 16]]
-Accuracy: 100.0%
-Total Accuracy:96.73202614379085%
+ [ 0 15  1]
+ [ 0  2 14]]
+Accuracy: 93.75%
+Total Accuracy:95.30228758169933%
 Neighbours: 10
 [[17  0  0]
- [ 0 16  1]
- [ 0  1 16]]
+ [ 0 15  2]
+ [ 0  0 17]]
 Accuracy: 96.07843137254902%
 [[17  0  0]
  [ 0 16  1]
+ [ 0  0 17]]
+Accuracy: 98.0392156862745%
+[[16  0  0]
+ [ 0 14  2]
+ [ 0  3 13]]
+Accuracy: 89.58333333333334%
+Total Accuracy:94.5669934640523%
+Method name: <function chybeshevDistance at 0x000001A4FF329EA0>
+Neighbours: 1
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  0 17]]
+Accuracy: 98.0392156862745%
+[[17  0  0]
+ [ 0 17  0]
  [ 0  1 16]]
+Accuracy: 98.0392156862745%
+[[16  0  0]
+ [ 0 14  2]
+ [ 0  1 15]]
+Accuracy: 93.75%
+Total Accuracy:96.609477124183%
+Neighbours: 3
+[[17  0  0]
+ [ 0 17  0]
+ [ 0  0 17]]
+Accuracy: 100.0%
+[[17  0  0]
+ [ 0 17  0]
+ [ 0  0 17]]
+Accuracy: 100.0%
+[[16  0  0]
+ [ 0 15  1]
+ [ 0  2 14]]
+Accuracy: 93.75%
+Total Accuracy:97.91666666666667%
+Neighbours: 5
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  0 17]]
+Accuracy: 98.0392156862745%
+[[17  0  0]
+ [ 0 15  2]
+ [ 0  0 17]]
 Accuracy: 96.07843137254902%
 [[16  0  0]
- [ 0 16  0]
- [ 0  0 16]]
+ [ 0 15  1]
+ [ 0  2 14]]
+Accuracy: 93.75%
+Total Accuracy:95.95588235294117%
+Neighbours: 10
+[[17  0  0]
+ [ 0 14  3]
+ [ 0  0 17]]
+Accuracy: 94.11764705882352%
+[[17  0  0]
+ [ 0 17  0]
+ [ 0  0 17]]
 Accuracy: 100.0%
-Total Accuracy:97.38562091503267%
+[[16  0  0]
+ [ 0 15  1]
+ [ 0  2 14]]
+Accuracy: 93.75%
+Total Accuracy:95.95588235294117%

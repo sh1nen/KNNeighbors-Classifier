@@ -111,7 +111,7 @@ def normalize(dataSet=[]):
 		 	dataSet[x][y] = (dataSet[x][y] - min(list([i[y] for i in dataSet]))) / (max(list([i[y] for i in dataSet])) - min(list([i[y] for i in dataSet])))
 
 def confusionMatrix(actual, predicted):
-	print(confusion_matrix(actual, predicted))
+	print(confusion_matrix(actual, predicted, labels=["1","2","3"]))
 
 def extractErrors(actual, predicted):
 	tn, fp, fn, tp = confusion_matrix(actual,predicted).ravel()

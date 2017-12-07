@@ -4,6 +4,7 @@ import random
 import math
 import operator
 import numpy as np
+from sklearn.metrics import confusion_matrix
 
 def loadDataset(filename,fullSet=[]):
 	with open(filename, 'r') as csvfile:
@@ -109,6 +110,9 @@ def normalize(dataSet=[]):
 		for y in range(len(dataSet[x])-1):
 		 	dataSet[x][y] = (dataSet[x][y] - min(list([i[y] for i in dataSet]))) / (max(list([i[y] for i in dataSet])) - min(list([i[y] for i in dataSet])))
 
+def confusionMatrix(actual, predicted):
+	print(confusion_matrix(actual, predicted))
+
 def main(fileName, distanceMethod, kNeighbors, isNormalized):
 	# prepare data
 	fullSet = []
@@ -143,11 +147,14 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 				xCrossValidation(firstFold, secondFold, thirdFold, case, trainingSet, testSet)
 
 				predictions=[]
+				actual=[]
 				for x in range(len(testSet)):
 					neighbors = getNeighbors(distanceMethod, trainingSet, testSet[x], kNeighbor)
 					result = getResponse(neighbors)
 					predictions.append(result)
+					actual.append(testSet[x][-1])
 					#print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
+				confusionMatrix(actual, predictions)
 				accuracy = getAccuracy(testSet, predictions)
 				totalAccuracy += accuracy
 				print('Accuracy: ' + repr(accuracy) + '%')

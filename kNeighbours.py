@@ -113,6 +113,10 @@ def normalize(dataSet=[]):
 def confusionMatrix(actual, predicted):
 	print(confusion_matrix(actual, predicted))
 
+def extractErrors(actual, predicted):
+	tn, fp, fn, tp = confusion_matrix(actual,predicted).ravel()
+	return(tn, fp, fn, tp)
+
 def main(fileName, distanceMethod, kNeighbors, isNormalized):
 	# prepare data
 	fullSet = []
@@ -122,7 +126,7 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 
 	columns = np.shape(fullSet)[1]
 	species = set([i[columns-1] for i in fullSet])
-
+	print('Species: ' + repr(species))
 	firstFold=[]
 	secondFold=[]
 	thirdFold=[]
@@ -145,7 +149,6 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 				trainingSet=[]
 				testSet=[]
 				xCrossValidation(firstFold, secondFold, thirdFold, case, trainingSet, testSet)
-
 				predictions=[]
 				actual=[]
 				for x in range(len(testSet)):

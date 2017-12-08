@@ -1,471 +1,172 @@
-Method name: <function euclideanDistance at 0x000001B11D711C80>
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-Accuracy: 92.10526315789474%
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-Accuracy: 94.73684210526315%
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-Accuracy: 89.47368421052632%
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-Accuracy: 92.10526315789474%
-Method name: <function manhattanDistance at 0x000001B11D711D08>
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-Accuracy: 86.8421052631579%
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-Accuracy: 94.73684210526315%
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-Accuracy: 89.47368421052632%
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-Accuracy: 92.10526315789474%
-Method name: <function chybeshevDistance at 0x000001B11D711D90>
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-Accuracy: 94.73684210526315%
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-Accuracy: 94.73684210526315%
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-Accuracy: 89.47368421052632%
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-virginica', actual='Iris-virginica'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-versicolor', actual='Iris-versicolor'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-> predicted='Iris-setosa', actual='Iris-setosa'
-Accuracy: 92.10526315789474%
+Species: {'Iris-setosa', 'Iris-versicolor', 'Iris-virginica'}
+Method name: <function euclideanDistance at 0x000001A4FF329D90>
+Neighbours: 1
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  1 16]]
+Accuracy: 96.07843137254902%
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  0 17]]
+Accuracy: 98.0392156862745%
+[[16  0  0]
+ [ 0 14  2]
+ [ 0  2 14]]
+Accuracy: 91.66666666666666%
+Total Accuracy:95.26143790849672%
+Neighbours: 3
+[[17  0  0]
+ [ 0 17  0]
+ [ 0  1 16]]
+Accuracy: 98.0392156862745%
+[[17  0  0]
+ [ 0 17  0]
+ [ 0  0 17]]
+Accuracy: 100.0%
+[[16  0  0]
+ [ 0 14  2]
+ [ 0  2 14]]
+Accuracy: 91.66666666666666%
+Total Accuracy:96.56862745098039%
+Neighbours: 5
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  0 17]]
+Accuracy: 98.0392156862745%
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  1 16]]
+Accuracy: 96.07843137254902%
+[[16  0  0]
+ [ 0 15  1]
+ [ 0  2 14]]
+Accuracy: 93.75%
+Total Accuracy:95.95588235294117%
+Neighbours: 10
+[[17  0  0]
+ [ 0 15  2]
+ [ 0  0 17]]
+Accuracy: 96.07843137254902%
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  0 17]]
+Accuracy: 98.0392156862745%
+[[16  0  0]
+ [ 0 15  1]
+ [ 0  2 14]]
+Accuracy: 93.75%
+Total Accuracy:95.95588235294117%
+Method name: <function manhattanDistance at 0x000001A4FF329E18>
+Neighbours: 1
+[[17  0  0]
+ [ 0 15  2]
+ [ 0  1 16]]
+Accuracy: 94.11764705882352%
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  0 17]]
+Accuracy: 98.0392156862745%
+[[16  0  0]
+ [ 0 14  2]
+ [ 0  2 14]]
+Accuracy: 91.66666666666666%
+Total Accuracy:94.60784313725487%
+Neighbours: 3
+[[17  0  0]
+ [ 0 15  2]
+ [ 0  1 16]]
+Accuracy: 94.11764705882352%
+[[17  0  0]
+ [ 0 17  0]
+ [ 0  0 17]]
+Accuracy: 100.0%
+[[16  0  0]
+ [ 0 14  2]
+ [ 0  2 14]]
+Accuracy: 91.66666666666666%
+Total Accuracy:95.26143790849672%
+Neighbours: 5
+[[17  0  0]
+ [ 0 15  2]
+ [ 0  0 17]]
+Accuracy: 96.07843137254902%
+[[17  0  0]
+ [ 0 15  2]
+ [ 0  0 17]]
+Accuracy: 96.07843137254902%
+[[16  0  0]
+ [ 0 15  1]
+ [ 0  2 14]]
+Accuracy: 93.75%
+Total Accuracy:95.30228758169933%
+Neighbours: 10
+[[17  0  0]
+ [ 0 15  2]
+ [ 0  0 17]]
+Accuracy: 96.07843137254902%
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  0 17]]
+Accuracy: 98.0392156862745%
+[[16  0  0]
+ [ 0 14  2]
+ [ 0  3 13]]
+Accuracy: 89.58333333333334%
+Total Accuracy:94.5669934640523%
+Method name: <function chybeshevDistance at 0x000001A4FF329EA0>
+Neighbours: 1
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  0 17]]
+Accuracy: 98.0392156862745%
+[[17  0  0]
+ [ 0 17  0]
+ [ 0  1 16]]
+Accuracy: 98.0392156862745%
+[[16  0  0]
+ [ 0 14  2]
+ [ 0  1 15]]
+Accuracy: 93.75%
+Total Accuracy:96.609477124183%
+Neighbours: 3
+[[17  0  0]
+ [ 0 17  0]
+ [ 0  0 17]]
+Accuracy: 100.0%
+[[17  0  0]
+ [ 0 17  0]
+ [ 0  0 17]]
+Accuracy: 100.0%
+[[16  0  0]
+ [ 0 15  1]
+ [ 0  2 14]]
+Accuracy: 93.75%
+Total Accuracy:97.91666666666667%
+Neighbours: 5
+[[17  0  0]
+ [ 0 16  1]
+ [ 0  0 17]]
+Accuracy: 98.0392156862745%
+[[17  0  0]
+ [ 0 15  2]
+ [ 0  0 17]]
+Accuracy: 96.07843137254902%
+[[16  0  0]
+ [ 0 15  1]
+ [ 0  2 14]]
+Accuracy: 93.75%
+Total Accuracy:95.95588235294117%
+Neighbours: 10
+[[17  0  0]
+ [ 0 14  3]
+ [ 0  0 17]]
+Accuracy: 94.11764705882352%
+[[17  0  0]
+ [ 0 17  0]
+ [ 0  0 17]]
+Accuracy: 100.0%
+[[16  0  0]
+ [ 0 15  1]
+ [ 0  2 14]]
+Accuracy: 93.75%
+Total Accuracy:95.95588235294117%

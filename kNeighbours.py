@@ -4,6 +4,7 @@ import random
 import math
 import operator
 import numpy as np
+from sklearn.metrics import confusion_matrix
 
 def loadDataset(filename,fullSet=[]):
 	with open(filename, 'r') as csvfile:
@@ -109,6 +110,13 @@ def normalize(dataSet=[]):
 		for y in range(len(dataSet[x])-1):
 		 	dataSet[x][y] = (dataSet[x][y] - min(list([i[y] for i in dataSet]))) / (max(list([i[y] for i in dataSet])) - min(list([i[y] for i in dataSet])))
 
+def confusionMatrix(actual, predicted):
+	print(confusion_matrix(actual, predicted, labels=["1","2","3"]))
+
+def extractErrors(actual, predicted):
+	tn, fp, fn, tp = confusion_matrix(actual,predicted).ravel()
+	return(tn, fp, fn, tp)
+
 def main(fileName, distanceMethod, kNeighbors, isNormalized):
 	# prepare data
 	fullSet = []
@@ -118,7 +126,7 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 
 	columns = np.shape(fullSet)[1]
 	species = set([i[columns-1] for i in fullSet])
-
+	print('Species: ' + repr(species))
 	firstFold=[]
 	secondFold=[]
 	thirdFold=[]
@@ -141,13 +149,15 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 				trainingSet=[]
 				testSet=[]
 				xCrossValidation(firstFold, secondFold, thirdFold, case, trainingSet, testSet)
-
 				predictions=[]
+				actual=[]
 				for x in range(len(testSet)):
 					neighbors = getNeighbors(distanceMethod, trainingSet, testSet[x], kNeighbor)
 					result = getResponse(neighbors)
 					predictions.append(result)
+					actual.append(testSet[x][-1])
 					#print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
+				confusionMatrix(actual, predictions)
 				accuracy = getAccuracy(testSet, predictions)
 				totalAccuracy += accuracy
 				print('Accuracy: ' + repr(accuracy) + '%')

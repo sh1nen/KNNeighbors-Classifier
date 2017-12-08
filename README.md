@@ -1,4 +1,4 @@
-# KNNeighbors-Classifier
+# KNNeighbours-Classifier
 
 It's a really simple classifier which abstracts from using libraries used for faster artificial intelligence development 
 available in Python such as sklearn, scipy etc. It only uses those libraries for better results representation such as confusion matrix.  

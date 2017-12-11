@@ -34,26 +34,26 @@ def xCrossValidation(firstFold, secondFold, thirdFold, case, trainingSet=[], tes
 	trainingSet.clear()
 	testSet.clear()
 	if case == 1:
-		for x in range(len(firstFold)):
-			testSet.append(firstFold[x])
-		for x in range(len(secondFold)):
-			trainingSet.append(secondFold[x])
-		for x in range(len(thirdFold)):
-			trainingSet.append(thirdFold[x]),
+		for x in firstFold:
+			testSet.append(x)
+		for x in secondFold:
+			trainingSet.append(x)
+		for x in thirdFold:
+			trainingSet.append(x),
 	elif case == 2:
-		for x in range(len(secondFold)):
-			testSet.append(secondFold[x])
-		for x in range(len(firstFold)):
-			trainingSet.append(firstFold[x])
-		for x in range(len(thirdFold)):
-			trainingSet.append(thirdFold[x]),
+		for x in secondFold:
+			testSet.append(x)
+		for x in firstFold:
+			trainingSet.append(x)
+		for x in thirdFold:
+			trainingSet.append(x),
 	elif case == 3:
-		for x in range(len(thirdFold)):
-			testSet.append(thirdFold[x])
-		for x in range(len(firstFold)):
-			trainingSet.append(firstFold[x])
-		for x in range(len(secondFold)):
-			trainingSet.append(secondFold[x])
+		for x in thirdFold:
+			testSet.append(x)
+		for x in firstFold:
+			trainingSet.append(x)
+		for x in secondFold:
+			trainingSet.append(x)
 
 def euclideanDistance(instance1, instance2, length):
 	distance = 0
@@ -87,7 +87,23 @@ def getNeighbors(distanceMethod, trainingSet, testInstance, k):
 		neighbors.append(distances[x][0])
 	return neighbors
 
-def getResponse(neighbors):
+def isDraw(classVotes):
+	if len(classVotes) > 1:
+		maxValue = 0
+		for x in classVotes:
+			if classVotes[x] > maxValue:
+				maxValue = classVotes[x]
+		firstAppeard = False
+		for x in classVotes:
+			if classVotes[x] == maxValue and firstAppeard == False:
+				firstAppeard = True
+			elif classVotes[x] == maxValue and firstAppeard == True:
+				return True
+		return False
+	else:
+		return False
+
+def getResponse(distanceMethod, neighbors, point):
 	classVotes = {}
 	for x in range(len(neighbors)):
 		response = neighbors[x][-1]
@@ -95,8 +111,12 @@ def getResponse(neighbors):
 			classVotes[response] += 1
 		else:
 			classVotes[response] = 1
-	sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)
-	return sortedVotes[0][0]
+	if isDraw(classVotes):
+		neighbor = getNeighbors(distanceMethod, neighbors, point, 1)
+		return neighbor[0][-1]
+	else:
+		sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)
+		return sortedVotes[0][0]
 
 def getAccuracy(testSet, predictions):
 	correct = 0
@@ -111,7 +131,7 @@ def normalize(dataSet=[]):
 		 	dataSet[x][y] = (dataSet[x][y] - min(list([i[y] for i in dataSet]))) / (max(list([i[y] for i in dataSet])) - min(list([i[y] for i in dataSet])))
 
 def confusionMatrix(actual, predicted):
-	print(confusion_matrix(actual, predicted, labels=["1","2","3"]))
+	print(confusion_matrix(actual, predicted))
 
 def extractErrors(actual, predicted):
 	tn, fp, fn, tp = confusion_matrix(actual,predicted).ravel()
@@ -131,12 +151,12 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 	secondFold=[]
 	thirdFold=[]
 	#create 3 folds with randomly picked up sets from specific species
-	kFold(fullSet, species, firstFold, secondFold, thirdFold)
 
 	#create trainingSet and testSet based on cross validation rule 1,2,3
 	#2 + 3 = trainingSet, 1 - testSet
 	#1 + 3 = trainingSet, 2 - testSet
 	#1 + 2 = trainingSet, 3 - testSet
+	kFold(fullSet, species, firstFold, secondFold, thirdFold)
 
 	distanceMethods = (euclideanDistance, manhattanDistance, chybeshevDistance)
 	for distanceMethod in distanceMethods:
@@ -153,10 +173,9 @@ def main(fileName, distanceMethod, kNeighbors, isNormalized):
 				actual=[]
 				for x in range(len(testSet)):
 					neighbors = getNeighbors(distanceMethod, trainingSet, testSet[x], kNeighbor)
-					result = getResponse(neighbors)
+					result = getResponse(distanceMethod, neighbors, testSet[x])
 					predictions.append(result)
 					actual.append(testSet[x][-1])
-					#print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
 				confusionMatrix(actual, predictions)
 				accuracy = getAccuracy(testSet, predictions)
 				totalAccuracy += accuracy
